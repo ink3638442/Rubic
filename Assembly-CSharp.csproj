@@ -99,6 +99,7 @@
      <Compile Include="Assets\BaseSetting\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\BaseSetting\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\BaseSetting\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Scripts\RotateController.cs" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\Fog.shader" />
