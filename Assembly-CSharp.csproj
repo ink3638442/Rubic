@@ -99,8 +99,12 @@
      <Compile Include="Assets\BaseSetting\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\BaseSetting\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\BaseSetting\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
+     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\RotateController.cs" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+     <None Include="Assets\Demigiant\DOTween\readme.txt" />
+     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\Fog.shader" />
      <None Include="Assets\BaseSetting\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
@@ -115,6 +119,7 @@
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
      <None Include="Assets\BaseSetting\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\Uber.shader" />
+     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\Blit.shader" />
      <None Include="Assets\BaseSetting\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
      <None Include="Assets\BaseSetting\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
@@ -136,6 +141,7 @@
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\Bloom.shader" />
      <None Include="Assets\BaseSetting\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\BaseSetting\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
@@ -162,6 +168,18 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/aki/Unity/Rubic/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>/Users/aki/Unity/Rubic/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>/Users/aki/Unity/Rubic/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Users/aki/Unity/Rubic/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class RotateController : MonoBehaviour
 {
@@ -101,18 +102,18 @@ public class RotateController : MonoBehaviour
 		// 16_Cube_Prefab グリーン中心
 		// 22_Cube_Prefab ブルー中心
 		if (this.gameObject.name == "4_Cube_Prefab" || this.gameObject.name == "22_Cube_Prefab")
-		{		
-			transform.Rotate(0, 90, 0);
+		{
+			transform.DORotate(new Vector3 (0, 90, 0), 0.6f, RotateMode.LocalAxisAdd);
 		}
 		
 		if (this.gameObject.name == "10_Cube_Prefab" || this.gameObject.name == "16_Cube_Prefab")
 		{
-			transform.Rotate(0, 0, 90);
+			transform.DORotate(new Vector3 (0, 0, 90), 0.6f, RotateMode.LocalAxisAdd);
 		}
 
 		if (this.gameObject.name == "12_Cube_Prefab" || this.gameObject.name == "14_Cube_Prefab")
 		{
-			transform.Rotate(90, 0, 0);
+			transform.DORotate(new Vector3 (90, 0, 0), 0.6f, RotateMode.LocalAxisAdd);
 		}
 	}
 }
