@@ -12,6 +12,9 @@ public class RotateController : MonoBehaviour
 	private GameObject centerGreen;
 	private GameObject centerBlue;
 
+	private AudioSource se;
+	private AudioClip rotateSE;
+
     // Use this for initialization
     void Start()
     {
@@ -27,6 +30,9 @@ public class RotateController : MonoBehaviour
 		this.centerRed    = GameObject.Find("14_Cube_Prefab");
 		this.centerGreen  = GameObject.Find("16_Cube_Prefab");
 		this.centerBlue   = GameObject.Find("22_Cube_Prefab");
+
+		this.se = GetComponent<AudioSource>();
+		this.rotateSE = this.se.clip;
     }
 
     // Update is called once per frame
@@ -118,17 +124,19 @@ public class RotateController : MonoBehaviour
 	{
 		if (center == this.centerWhite || center == this.centerBlue)
 		{
+			this.se.PlayOneShot(this.rotateSE, 1);
 			center.transform.DORotate(new Vector3 (0, 90, 0), 0.6f, RotateMode.LocalAxisAdd);
 		}
 		
-		
 		if (center == this.centerYellow || center == this.centerGreen)
 		{
+			this.se.PlayOneShot(this.rotateSE, 1);
 			center.transform.DORotate(new Vector3 (0, 0, 90), 0.6f, RotateMode.LocalAxisAdd);
 		}
 
 		if (center == this.centerOrange || center == this.centerRed)
 		{
+			this.se.PlayOneShot(this.rotateSE, 1);
 			center.transform.DORotate(new Vector3 (90, 0, 0), 0.6f, RotateMode.LocalAxisAdd);
 		}
 	}
