@@ -38,7 +38,8 @@ public class RotateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (DOTween.PlayingTweens() == null)
+		if (DOTween.IsTweening(this.centerWhite.transform) == false && DOTween.IsTweening(this.centerYellow.transform) == false && DOTween.IsTweening(this.centerOrange.transform) == false &&
+								DOTween.IsTweening(this.centerRed.transform) == false && DOTween.IsTweening(this.centerGreen.transform) == false && DOTween.IsTweening(this.centerBlue.transform) == false)
 		{
 			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{
