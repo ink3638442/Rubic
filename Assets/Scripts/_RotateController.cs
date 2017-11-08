@@ -15,6 +15,9 @@ public class RotateController : MonoBehaviour
 	private AudioSource se;
 	private AudioClip rotateSE;
 
+	[SerializeField]
+	GameObject rubic;
+
     // Use this for initialization
     void Start()
     {
@@ -38,6 +41,8 @@ public class RotateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		rubic.transform.Rotate(1,1,1);
+
 		if (DOTween.IsTweening(this.centerWhite.transform) == false && DOTween.IsTweening(this.centerYellow.transform) == false && DOTween.IsTweening(this.centerOrange.transform) == false &&
 								DOTween.IsTweening(this.centerRed.transform) == false && DOTween.IsTweening(this.centerGreen.transform) == false && DOTween.IsTweening(this.centerBlue.transform) == false)
 		{
