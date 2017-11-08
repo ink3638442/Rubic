@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Text; 
+using DG.Tweening;
 
 public class RubicController : MonoBehaviour
 {
@@ -40,9 +40,10 @@ public class RubicController : MonoBehaviour
 
 				if (cube.transform.localPosition.y - centerCore.transform.localPosition.y > 0.2f)
 				{
-					cube.gameObject.transform.parent = this.centerWhite.transform;
+					cube.gameObject.transform.parent = centerWhite.transform;
 				}
 			}
+			Rotate(centerWhite);
 		}
 
 		if (Input.GetKeyDown(KeyCode.Y))
@@ -53,9 +54,10 @@ public class RubicController : MonoBehaviour
 
 				if (cube.transform.localPosition.z - centerCore.transform.localPosition.z > 0.2f)
 				{
-					cube.gameObject.transform.parent = this.centerYellow.transform;
+					cube.gameObject.transform.parent = centerYellow.transform;
 				}
 			}
+			Rotate(centerYellow);
 		}
 
 		if (Input.GetKeyDown(KeyCode.O))
@@ -66,9 +68,10 @@ public class RubicController : MonoBehaviour
 
 				if (cube.transform.localPosition.x - centerCore.transform.localPosition.x < -0.2f)
 				{
-					cube.gameObject.transform.parent = this.centerOrange.transform;
+					cube.gameObject.transform.parent = centerOrange.transform;
 				}
 			}
+			Rotate(centerOrange);
 		}
 
 		if (Input.GetKeyDown(KeyCode.R))
@@ -79,9 +82,10 @@ public class RubicController : MonoBehaviour
 
 				if (cube.transform.localPosition.x - centerCore.transform.localPosition.x > 0.2f)
 				{
-					cube.gameObject.transform.parent = this.centerRed.transform;
+					cube.gameObject.transform.parent = centerRed.transform;
 				}
 			}
+			Rotate(centerRed);
 		}
 
 		if (Input.GetKeyDown(KeyCode.G))
@@ -92,9 +96,10 @@ public class RubicController : MonoBehaviour
 
 				if (cube.transform.localPosition.z - centerCore.transform.localPosition.z < -0.2f)
 				{
-					cube.gameObject.transform.parent = this.centerGreen.transform;
+					cube.gameObject.transform.parent = centerGreen.transform;
 				}
 			}
+			Rotate(centerGreen);
 		}
 
 		if (Input.GetKeyDown(KeyCode.B))
@@ -105,9 +110,28 @@ public class RubicController : MonoBehaviour
 
 				if (cube.transform.localPosition.y - centerCore.transform.localPosition.y < -0.2f)
 				{
-					cube.gameObject.transform.parent = this.centerBlue.transform;
+					cube.gameObject.transform.parent = centerBlue.transform;
 				}
 			}
+			Rotate(centerBlue);
 		}
     }
+
+	void Rotate(GameObject center)
+	{
+		if (center == centerWhite || center == centerBlue)
+		{
+			center.transform.DOLocalRotate(new Vector3 (0, 90, 0), 0.6f, RotateMode.LocalAxisAdd);
+		}
+		
+		if (center == centerYellow || center == centerGreen)
+		{
+			center.transform.DOLocalRotate(new Vector3 (0, 0, 90), 0.6f, RotateMode.LocalAxisAdd);
+		}
+
+		if (center == centerOrange || center == centerRed)
+		{
+			center.transform.DOLocalRotate(new Vector3 (90, 0, 0), 0.6f, RotateMode.LocalAxisAdd);
+		}
+	}
 }
