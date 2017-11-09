@@ -36,110 +36,140 @@ public class RubicController : MonoBehaviour
     {
 		if (Input.GetKeyDown(KeyCode.W))
 		{
-			if (isRotation == false)
-			{
-				isRotation = true;
-				foreach (GameObject cube in cubes)
-				{
-					cube.gameObject.transform.parent = transform;
-
-					if (cube.transform.localPosition.y - centerCore.transform.localPosition.y > 0.2f)
-					{
-						cube.gameObject.transform.parent = centerWhite.transform;
-					}
-				}
-				Rotate(centerWhite);
-			}
+			RotateWhite();
 		}
 
 		if (Input.GetKeyDown(KeyCode.Y))
 		{
-			if (isRotation == false)
-			{
-				isRotation = true;
-				foreach (GameObject cube in cubes)
-				{
-					cube.gameObject.transform.parent = transform;
-
-					if (cube.transform.localPosition.z - centerCore.transform.localPosition.z > 0.2f)
-					{
-						cube.gameObject.transform.parent = centerYellow.transform;
-					}
-				}
-				Rotate(centerYellow);
-			}
+			RotateYellow();
 		}
 
 		if (Input.GetKeyDown(KeyCode.O))
 		{
-			if (isRotation == false)
-			{
-				isRotation = true;
-				foreach (GameObject cube in cubes)
-				{
-					cube.gameObject.transform.parent = transform;
-
-					if (cube.transform.localPosition.x - centerCore.transform.localPosition.x < -0.2f)
-					{
-						cube.gameObject.transform.parent = centerOrange.transform;
-					}
-				}
-				Rotate(centerOrange);
-			}
+			RotateOrange();
 		}
 
 		if (Input.GetKeyDown(KeyCode.R))
 		{
-			if (isRotation == false)
-			{
-				isRotation = true;
-				foreach (GameObject cube in cubes)
-				{
-					cube.gameObject.transform.parent = transform;
-
-					if (cube.transform.localPosition.x - centerCore.transform.localPosition.x > 0.2f)
-					{
-						cube.gameObject.transform.parent = centerRed.transform;
-					}
-				}
-				Rotate(centerRed);
-			}
+			RotateRed();
 		}
 
 		if (Input.GetKeyDown(KeyCode.G))
 		{
-			if (isRotation == false)
-			{
-				isRotation = true;
-				foreach (GameObject cube in cubes)
-				{
-					cube.gameObject.transform.parent = transform;
-
-					if (cube.transform.localPosition.z - centerCore.transform.localPosition.z < -0.2f)
-					{
-						cube.gameObject.transform.parent = centerGreen.transform;
-					}
-				}
-				Rotate(centerGreen);
-			}
+			RotateGreen();
 		}
 
 		if (Input.GetKeyDown(KeyCode.B))
 		{
-			if (isRotation == false)
-			{
-				isRotation = true;
-				foreach (GameObject cube in cubes)
-				{
-					cube.gameObject.transform.parent = transform;
+			RotateBlue();
+		}
+	}
 
-					if (cube.transform.localPosition.y - centerCore.transform.localPosition.y < -0.2f)
-					{
-						cube.gameObject.transform.parent = centerBlue.transform;
-					}
+	void RotateWhite()
+	{
+		if (isRotation == false)
+		{
+			isRotation = true;
+			foreach (GameObject cube in cubes)
+			{
+				cube.gameObject.transform.parent = transform;
+
+				if (cube.transform.localPosition.y - centerCore.transform.localPosition.y > 0.2f)
+				{
+					cube.gameObject.transform.parent = centerWhite.transform;
 				}
-				Rotate(centerBlue);
 			}
+			Rotate(centerWhite);
+		}
+	}
+
+	void RotateYellow()
+	{
+		if (isRotation == false)
+		{
+			isRotation = true;
+			foreach (GameObject cube in cubes)
+			{
+				cube.gameObject.transform.parent = transform;
+
+				if (cube.transform.localPosition.z - centerCore.transform.localPosition.z > 0.2f)
+				{
+					cube.gameObject.transform.parent = centerYellow.transform;
+				}
+			}
+			Rotate(centerYellow);
+		}	
+	}
+
+	void RotateOrange()
+	{
+		if (isRotation == false)
+		{
+			isRotation = true;
+			foreach (GameObject cube in cubes)
+			{
+				cube.gameObject.transform.parent = transform;
+
+				if (cube.transform.localPosition.x - centerCore.transform.localPosition.x < -0.2f)
+				{
+					cube.gameObject.transform.parent = centerOrange.transform;
+				}
+			}
+			Rotate(centerOrange);
+		}
+	}
+
+	void RotateRed()
+	{
+		if (isRotation == false)
+		{
+			isRotation = true;
+			foreach (GameObject cube in cubes)
+			{
+				cube.gameObject.transform.parent = transform;
+
+				if (cube.transform.localPosition.x - centerCore.transform.localPosition.x > 0.2f)
+				{
+					cube.gameObject.transform.parent = centerRed.transform;
+				}
+			}
+			Rotate(centerRed);
+		}
+	}
+
+	void RotateGreen()
+	{
+		if (isRotation == false)
+		{
+			isRotation = true;
+			foreach (GameObject cube in cubes)
+			{
+				cube.gameObject.transform.parent = transform;
+
+				if (cube.transform.localPosition.z - centerCore.transform.localPosition.z < -0.2f)
+				{
+					cube.gameObject.transform.parent = centerGreen.transform;
+				}
+			}
+			Rotate(centerGreen);
+		}
+	}
+
+	void RotateBlue()
+	{
+		if (isRotation == false)
+		{
+			isRotation = true;
+			foreach (GameObject cube in cubes)
+			{
+				cube.gameObject.transform.parent = transform;
+
+				if (cube.transform.localPosition.y - centerCore.transform.localPosition.y < -0.2f)
+				{
+					cube.gameObject.transform.parent = centerBlue.transform;
+				}
+			}
+			Rotate(centerBlue);
 		}
 	}
 
