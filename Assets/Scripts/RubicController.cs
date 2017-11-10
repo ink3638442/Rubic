@@ -44,6 +44,7 @@ public class RubicController : MonoBehaviour
     {
 		rotateSpeed = 0.6f;
 
+		// 予約がある場合消化する
 		if (reservationsOrder.Count > 0)
 		{
 			rotateSpeed = 0.2f;
