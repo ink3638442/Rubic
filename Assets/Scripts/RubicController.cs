@@ -23,17 +23,54 @@ public class RubicController : MonoBehaviour
 	[SerializeField]
 	List<GameObject> cubes = new List<GameObject>();
 
+	[SerializeField]
+	List<int> reservationsOrder = new List<int>();
+
+	[SerializeField]
+	int initialRotationCount;
+
+	float rotateSpeed = 0.6f;
+
 	bool isRotation = false;
 
     // Use this for initialization
     void Start()
     {
-
+		InitialRotate();
     }
 
     // Update is called once per frame
     void Update()
     {
+		rotateSpeed = 0.6f;
+
+		if (reservationsOrder.Count > 0)
+		{
+			rotateSpeed = 0.2f;
+
+			switch (reservationsOrder[0])
+			{
+				case 0:
+					RotateWhite();
+					break;
+				case 1:
+					RotateYellow();
+					break;
+				case 2:
+					RotateOrange();  
+					break;
+				case 3:
+					RotateRed();  
+					break;
+				case 4:
+					RotateGreen(); 
+					break;
+				case 5:
+					RotateBlue();
+					break;
+			}
+		}
+
 		if (Input.GetKeyDown(KeyCode.W))
 		{
 			RotateWhite();
@@ -62,6 +99,11 @@ public class RubicController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.B))
 		{
 			RotateBlue();
+		}
+
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			InitialRotate();
 		}
 	}
 
@@ -177,22 +219,36 @@ public class RubicController : MonoBehaviour
 	{
 		if (center == centerWhite || center == centerBlue)
 		{
-			center.transform.DOLocalRotate(new Vector3 (0, 90, 0), 0.6f, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
+			center.transform.DOLocalRotate(new Vector3 (0, 90, 0), rotateSpeed, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
 		}
 		
 		if (center == centerYellow || center == centerGreen)
 		{
-			center.transform.DOLocalRotate(new Vector3 (0, 0, 90), 0.6f, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
+			center.transform.DOLocalRotate(new Vector3 (0, 0, 90), rotateSpeed, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
 		}
 
 		if (center == centerOrange || center == centerRed)
 		{
-			center.transform.DOLocalRotate(new Vector3 (90, 0, 0), 0.6f, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
+			center.transform.DOLocalRotate(new Vector3 (90, 0, 0), rotateSpeed, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
+		}
+	}
+
+	void InitialRotate()
+	{
+		// 回転する面をランダムで決め、順番を配列に保管しておく
+		for (int i = 0; i < initialRotationCount; i++)
+		{
+			reservationsOrder.Add(Random.Range(0, 6));
 		}
 	}
 
 	void MyCallback()
 	{
+		if (reservationsOrder.Count > 0)
+		{
+			reservationsOrder.RemoveAt(0);
+		}
+
 		isRotation = false;
 	}
 }
