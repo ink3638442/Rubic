@@ -235,10 +235,13 @@ public class RubicController : MonoBehaviour
 
 	void InitialRotate()
 	{
-		// 回転する面をランダムで決め、順番を配列に保管しておく
-		for (int i = 0; i < initialRotationCount; i++)
+		if (isRotation == false)
 		{
-			reservationsOrder.Add(Random.Range(0, 6));
+			// 回転する面をランダムで決め、順番を配列に保管しておく
+			for (int i = 0; i < initialRotationCount; i++)
+			{
+				reservationsOrder.Add(Random.Range(0, 6));
+			}
 		}
 	}
 
