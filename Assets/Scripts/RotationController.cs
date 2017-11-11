@@ -41,6 +41,16 @@ public class RotationController : MonoBehaviour
                 RotateStart();
             }
 		}
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(-xVec * Time.deltaTime, 0, -zVec * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.Rotate(-xVec * Time.deltaTime, -yVec * Time.deltaTime, -xVec * Time.deltaTime);
+        }
     }
 
     void RotateStop()
