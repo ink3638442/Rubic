@@ -33,9 +33,15 @@ public class RubicController : MonoBehaviour
 
 	bool isRotation = false;
 
+	AudioSource se;
+	AudioClip rotateSE;
+
     // Use this for initialization
     void Start()
     {
+		this.se = GetComponent<AudioSource>();
+		this.rotateSE = this.se.clip;
+
 		InitialRotate();
     }
 
@@ -220,16 +226,19 @@ public class RubicController : MonoBehaviour
 	{
 		if (center == centerWhite || center == centerBlue)
 		{
+			se.PlayOneShot(rotateSE, 1);
 			center.transform.DOLocalRotate(new Vector3 (0, 90, 0), rotateSpeed, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
 		}
 		
 		if (center == centerYellow || center == centerGreen)
 		{
+			se.PlayOneShot(rotateSE, 1);
 			center.transform.DOLocalRotate(new Vector3 (0, 0, 90), rotateSpeed, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
 		}
 
 		if (center == centerOrange || center == centerRed)
 		{
+			se.PlayOneShot(rotateSE, 1);
 			center.transform.DOLocalRotate(new Vector3 (90, 0, 0), rotateSpeed, RotateMode.LocalAxisAdd).OnComplete(MyCallback);
 		}
 	}
